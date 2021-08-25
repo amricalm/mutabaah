@@ -37,6 +37,11 @@ const routes = [
         path: '/kelas/edit/:Kelas',
         name: 'kelas.edit',
         component: () => import('@/views/kelas/Edit.vue')
+    },
+    {
+        path: '/task',
+        name: 'task.index',
+        component: () => import('@/views/task/Index.vue')
     }
 ]
 

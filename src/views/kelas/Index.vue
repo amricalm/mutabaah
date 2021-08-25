@@ -1,49 +1,14 @@
 <template>
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card border-0 rounded shadow">
-                    <div class="card-body">
-                        <h4>DATA KELAS</h4>
-                        <hr>
-                        <router-link :to="{name: 'kelas.create'}" class="btn btn-md btn-success">TAMBAH KELAS</router-link>
-
-                        <table class="table table-striped table-bordered mt-4">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th scope="col">Kode Sekolah</th>
-                                    <th scope="col">Kelas</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr v-for="(kelas, index) in kelass" :key="index">
-                                    <td>{{ kelas.KdSekolah }}</td>
-                                    <td>{{ kelas.Kelas }}</td>
-                                    <td class="text-center">
-                                        <router-link :to="{name: 'kelas.edit', params:{Kelas: kelas.Kelas }}" class="btn btn-sm btn-primary mr-1">EDIT</router-link>
-                                        <button @click.prevent="kelasDelete(kelas.Kelas)" class="btn btn-sm btn-danger ml-1">DELETE</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
         <div class="main-container">
             <div class="container">
                 <div class="card">
                     <div class="card-header border-0 bg-none">
                         <div class="row">
                             <div class="col align-self-center">
-                                <h6 class="mb-0">Table Responsive</h6>
+                                <h6 class="mb-0">Data Kelas</h6>
                             </div>
                             <div class="col-auto align-self-center">
-                                <button class="btn btn-default btn-sm rounded">
-                                    Export
-                                </button>
+                                <router-link :to="{name: 'kelas.create'}" class="btn btn-default btn-sm rounded">Tambah</router-link>
                             </div>
                         </div>
                     </div>
@@ -52,30 +17,19 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">First</th>
-                                        <th scope="col">Last</th>
-                                        <th scope="col">Handle</th>
+                                        <th scope="col">Kode Sekolah</th>
+                                        <th scope="col">Kelas</th>
+                                        <th scope="col">Opsi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
+                                    <tr v-for="(kelas, index) in kelass" :key="index">
+                                        <td>{{ kelas.KdSekolah }}</td>
+                                        <td>{{ kelas.Kelas }}</td>
+                                        <td class="text-center">
+                                            <router-link :to="{name: 'kelas.edit', params:{Kelas: kelas.Kelas }}" class="btn btn-sm btn-primary mr-1">EDIT</router-link>
+                                            <button @click.prevent="kelasDelete(kelas.Kelas)" class="btn btn-sm btn-danger ml-1">DELETE</button>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>

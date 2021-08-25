@@ -1,5 +1,5 @@
 <template>
-        <div class="main-menu">
+    <div class="main-menu">
         <div class="row mb-4 no-gutters">
             <div class="col-auto"><button class="btn btn-link btn-40 btn-close text-white"><span class="material-icons">chevron_left</span></button></div>
             <div class="col-auto">
